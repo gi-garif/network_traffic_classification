@@ -1,0 +1,70 @@
+import requests
+
+# Positive test data
+test_data = {'destination_port': 5000,
+             'flow_duration': 43,
+             'total_fwd_packets': 1,
+             'total_backward_packets': 1,
+             'total_length_of_fwd_packets': 0,
+             'total_length_of_bwd_packets': 6,
+             'fwd_packet_length_max': 0,
+             'fwd_packet_length_min': 0,
+             'fwd_packet_length_mean': 0.0,
+             'fwd_packet_length_std': 0.0,
+             'bwd_packet_length_max': 6,
+             'bwd_packet_length_min': 6,
+             'bwd_packet_length_mean': 6.0,
+             'bwd_packet_length_std': 0.0,
+             'flow_bytes_s': 139534.88,
+             'flow_packets_s': 46511.63,
+             'flow_iat_mean': 43.0,
+             'flow_iat_std': 0.0,
+             'flow_iat_max': 43,
+             'flow_iat_min': 43,
+             'fwd_iat_total': 0,
+             'fwd_iat_mean': 0.0,
+             'fwd_iat_std': 0.0,
+             'fwd_iat_max': 0,
+             'fwd_iat_min': 0,
+             'bwd_iat_total': 0,
+             'bwd_iat_mean': 0.0,
+             'bwd_iat_std': 0.0,
+             'bwd_iat_max': 0,
+             'bwd_iat_min': 0,
+             'fwd_header_length': 40,
+             'bwd_header_length': 20,
+             'fwd_packets_s': 23255.81,
+             'bwd_packets_s': 23255.81,
+             'min_packet_length': 0,
+             'max_packet_length': 6,
+             'packet_length_mean': 2.0,
+             'packet_length_std': 3.46,
+             'packet_length_variance': 12.0,
+             'psh_flag_count': 1,
+             'average_packet_size': 3.0,
+             'avg_fwd_segment_size': 0.0,
+             'avg_bwd_segment_size': 6.0,
+             'fwd_header_length_1': 40,
+             'subflow_fwd_packets': 1,
+             'subflow_fwd_bytes': 0,
+             'subflow_bwd_packets': 1,
+             'subflow_bwd_bytes': 6,
+             'init_win_bytes_forward': 29200,
+             'init_win_bytes_backward': 0,
+             'act_data_pkt_fwd': 0,
+             'min_seg_size_forward': 40,
+             'active_mean': 0.0,
+             'active_max': 0,
+             'active_min': 0,
+             'idle_mean': 0.0,
+             'idle_max': 0,
+             'idle_min': 0}
+
+# Server address
+url = "http://0.0.0.0:8000/predict"
+
+# Send request
+resp = requests.post(url, json=test_data)
+
+# Print result
+print(resp.json())
